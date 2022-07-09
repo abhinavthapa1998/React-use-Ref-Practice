@@ -3,7 +3,7 @@ import "./styles.css";
 
 export default function App() {
   const [randomInput, setRandomInput] = useState("");
-  const [seconds, setSeconds] = useState("");
+  const [seconds, setSeconds] = useState(0);
   const renders = useRef(0);
   const timerId = useRef();
   const handleChange = (e) => {
@@ -16,11 +16,38 @@ export default function App() {
       setSeconds((prev) => prev + 1);
     }, 1000);
   };
-  const stopTimer = () => {};
+  const stopTimer = () => {
+    clearInterval(timerId.current);
+    timerId.current = 0;
+  };
+  const resetTimer = () => {
+    stopTimer();
+    if (seconds) {
+      renders.current++;
+      setSeconds(0);
+    }
+  };
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <h1>React UseRef</h1>
+      <input
+        type="text"
+        value={randomInput}
+        placeholder="Random Input"
+        onChange={handleChange}
+      />
+      <p>Renders: {renders.current}</p>
+      <br />
+      <br />
+      <section>
+        <button onClick={startTimer}>Start</button>
+        <button onClick={stopTimer}>Stop</button>
+        <button onClick={resetTimer}>Reset</button>
+      </section>
+      <br />
+      <br />
+      <p>Seconds: {seconds}</p>
+      <p>{randomInput}</p>
     </div>
   );
 }
