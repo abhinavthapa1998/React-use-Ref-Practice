@@ -30,24 +30,28 @@ export default function App() {
   return (
     <div className="App">
       <h1>React UseRef</h1>
-      <input
-        type="text"
-        value={randomInput}
-        placeholder="Random Input"
-        onChange={handleChange}
-      />
-      <p>Renders: {renders.current}</p>
-      <br />
-      <br />
+      <section>
+        <input
+          type="text"
+          value={randomInput}
+          placeholder="Random Input"
+          onChange={handleChange}
+        />
+        <p>Using useRef</p>
+        <p>Renders: {renders.current}</p>
+        <br />
+        <br />
+      </section>
       <section>
         <button onClick={startTimer}>Start</button>
         <button onClick={stopTimer}>Stop</button>
         <button onClick={resetTimer}>Reset</button>
+        <br />
+        <br />
+        <p>Using useState</p>
+        <p>Seconds: {seconds}</p>
+        <p>Random Input: {randomInput}</p>
       </section>
-      <br />
-      <br />
-      <p>Seconds: {seconds}</p>
-      <p>{randomInput}</p>
     </div>
   );
 }

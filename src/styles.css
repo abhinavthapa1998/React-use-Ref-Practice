@@ -2,3 +2,15 @@
   font-family: sans-serif;
   text-align: center;
 }
+body {
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=829&q=80");
+  background-repeat: no-repeat;
+  color: white;
+}
+section {
+  padding: 8px;
+  margin: 8px;
+  background: #ffffff55;
+  border: solid 4px whitesmoke;
+  border-radius: 8px;
+}
